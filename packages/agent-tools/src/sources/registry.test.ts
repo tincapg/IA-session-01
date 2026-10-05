@@ -48,12 +48,16 @@ describe("source registry", () => {
     await expect(loadSourceRegistry(dir)).rejects.toThrow(message);
   });
 
-  it("rejects a symbolic link that points outside the directory", async () => {
-    const outside = await makeSourcesDir({ "secret.md": "secret" }, []);
-    const dir = await makeSourcesDir({}, [entry({ file: "link.md" })]);
-    await symlink(join(outside, "secret.md"), join(dir, "link.md"));
-    await expect(loadSourceRegistry(dir)).rejects.toThrow(/outside the sources directory/);
-  });
+  // Windows needs admin rights or Developer Mode to create symlinks (EPERM).
+  it.skipIf(process.platform === "win32")(
+    "rejects a symbolic link that points outside the directory",
+    async () => {
+      const outside = await makeSourcesDir({ "secret.md": "secret" }, []);
+      const dir = await makeSourcesDir({}, [entry({ file: "link.md" })]);
+      await symlink(join(outside, "secret.md"), join(dir, "link.md"));
+      await expect(loadSourceRegistry(dir)).rejects.toThrow(/outside the sources directory/);
+    },
+  );
 
   it("rejects a directory and an oversized file", async () => {
     const withDir = await makeSourcesDir({}, [entry({ file: "sub" })]);

@@ -39,6 +39,13 @@ export const submitAnalysisTool = (ctx: ToolContext) =>
         const problems = await evidenceProblems(ctx, parsed.data);
         if (problems.length > 0) return failure(`The evidence is not valid:\n- ${problems.join("\n- ")}`);
 
-        return failure("TODO(session-01): the analysis is valid, but Loom does not store it yet.");
+        if (ctx.state.acceptedResultId !== null) {
+          return failure(
+            `An analysis was already accepted for this run (result ${ctx.state.acceptedResultId}). Do not submit again.`,
+          );
+        }
+        const saved = await ctx.results.save(ctx.runId, parsed.data);
+        ctx.state.acceptedResultId = saved.id;
+        return { accepted: true, analysisResultId: saved.id };
       }),
   });

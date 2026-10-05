@@ -1,3 +1,4 @@
+import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 import { resolveClientOptions } from "./client-options.ts";
 import { compareVersions, readSdkInfo } from "./sdk-info.ts";
@@ -20,7 +21,7 @@ describe("resolveClientOptions", () => {
     expect(resolved.profile).toBe("production");
     expect(resolved.options.mode).toBe("empty");
     expect(resolved.options.gitHubToken).toBe("github_pat_example");
-    expect(resolved.options.baseDirectory).toBe("/work/loom/.loom/copilot-home");
+    expect(resolved.options.baseDirectory).toBe(resolve("/work/loom/.loom/copilot-home"));
   });
 
   it("uses the installed CLI when a path is configured", () => {

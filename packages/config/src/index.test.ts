@@ -54,8 +54,8 @@ describe("config", () => {
 describe("Session 1 SQLite configuration", () => {
   it("resolves application storage and a separate test file", () => {
     const config = loadConfig({ DATABASE_URL: "sqlite:./.loom/session-01.sqlite" });
-    expect(config.databaseUrl).toMatch(/\/\.loom\/session-01\.sqlite$/);
-    expect(config.testDatabaseUrl).toMatch(/\/\.loom\/session-01_test\.sqlite$/);
+    expect(config.databaseUrl).toMatch(/[\\/]\.loom[\\/]session-01\.sqlite$/);
+    expect(config.testDatabaseUrl).toMatch(/[\\/]\.loom[\\/]session-01_test\.sqlite$/);
     expect(config.databaseUrl).not.toBe(config.testDatabaseUrl);
   });
   it("rejects tests that would share the application file", () => {
