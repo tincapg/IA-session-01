@@ -11,9 +11,7 @@ export type SessionConfigInput = {
 
 /** Session options for one run: Loom's tools and instructions, nothing ambient (ADR 0009). */
 export function buildSessionConfig(input: SessionConfigInput): SessionConfig {
-  const registration = { tools: [] as Tool[], instructions: "" };
-
-  // TODO(session-01): register the run's tools and pass Loom's instructions to the session.
+  const registration = { tools: input.tools, instructions: input.instructions };
 
   const availableTools = registration.tools.reduce((set, tool) => set.addCustom(tool.name), new ToolSet());
 
