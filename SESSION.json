@@ -45,10 +45,7 @@
   },
   "sourceSnapshotSha256": "8a41a12d065e6e1c3c265ebfcae26de7e115588fc78146e525bab5358c3062ae",
   "bunVersion": "1.4.0",
-  "supportedStorage": [
-    "PostgreSQL",
-    "SQLite (Session 1 only)"
-  ],
+  "supportedStorage": ["PostgreSQL", "SQLite (Session 1 only)"],
   "expectedWorkshopFailures": 13,
   "provenance": "Session 1 checkpoint plus documented Bun migration, reviewed SQLite overlay and current bilingual Session 1 material",
   "independentFacilitatorDryRun": "pending"
