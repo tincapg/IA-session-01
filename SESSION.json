@@ -1,0 +1,55 @@
+{
+  "session": "session-01",
+  "packageKind": "rehearsal",
+  "releaseApproved": false,
+  "tag": null,
+  "sourceCommit": "93ec320acea5235b31f25dfa3b325719168d41da",
+  "runtimeOverlayCommit": "a98dd05fe0dcffe2971b386156f99efeca010341",
+  "sqliteOverlay": {
+    "path": "handover/session-01-sqlite",
+    "state": "uncommitted working-tree overlay",
+    "files": [
+      {
+        "path": "apply.test.ts",
+        "sha256": "f6115a4cba19ca039c4c4ef1a5fafc3e6fa1875896a5af80c4e9eb9510a4f932"
+      },
+      {
+        "path": "apply.ts",
+        "sha256": "1752fad2ef9a74121b463f8b337411c31bc83a5f7ab87adceb7ab8f8991cebca"
+      },
+      {
+        "path": "compat.patch",
+        "sha256": "51b1c5402260ddd19ab6461bc21ccd064451b4c2662c7f5cd819f19c2276ca6d"
+      },
+      {
+        "path": "runtime/gitignore",
+        "sha256": "4c49443e3d2ef39df6419346f48b6bfef71ffb0797a8bdb94161aeb37a5aa800"
+      },
+      {
+        "path": "runtime/sqlite-bun.d.ts",
+        "sha256": "db70ca530c321fd88eb5369de876f27679e816596b075f1a2a905aad5d409ac8"
+      },
+      {
+        "path": "runtime/sqlite-migrations.ts",
+        "sha256": "cc4fb071e78c23f8adbb3b3fe26fc50448c7ec1df54ad143d5d40a36badf4a8a"
+      },
+      {
+        "path": "runtime/sqlite.test.ts",
+        "sha256": "860102f7b5c855e315c6386e9b534e8d2c7d570244dbba9348d87e1cab0b1c5b"
+      },
+      {
+        "path": "runtime/sqlite.ts",
+        "sha256": "55a402fb4d280ada26c3da29c3d6a7ce80962b60b627218d1abc96e2e3786b4a"
+      }
+    ]
+  },
+  "sourceSnapshotSha256": "8a41a12d065e6e1c3c265ebfcae26de7e115588fc78146e525bab5358c3062ae",
+  "bunVersion": "1.4.0",
+  "supportedStorage": [
+    "PostgreSQL",
+    "SQLite (Session 1 only)"
+  ],
+  "expectedWorkshopFailures": 13,
+  "provenance": "Session 1 checkpoint plus documented Bun migration, reviewed SQLite overlay and current bilingual Session 1 material",
+  "independentFacilitatorDryRun": "pending"
+}

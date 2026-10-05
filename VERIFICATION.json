@@ -1,0 +1,54 @@
+{
+  "verifiedAt": "2026-10-01T18:36:48.844Z",
+  "platform": "macOS arm64",
+  "runtime": "Bun 1.4.0",
+  "frozenInstall": "passed",
+  "typecheck": "passed",
+  "lint": "passed (starter retains two exercise-related warnings)",
+  "webBuild": "passed",
+  "backends": {
+    "sqlite": {
+      "completedReference": {
+        "passed": 98,
+        "failed": 0,
+        "skipped": 0
+      },
+      "starter": {
+        "passed": 85,
+        "expectedFailures": 13,
+        "unexpectedFailures": 0,
+        "skipped": 0,
+        "manifestMatched": true
+      }
+    },
+    "postgres": {
+      "completedReference": {
+        "passed": 98,
+        "failed": 0,
+        "skipped": 0
+      },
+      "starter": {
+        "passed": 85,
+        "expectedFailures": 13,
+        "unexpectedFailures": 0,
+        "skipped": 0,
+        "manifestMatched": true
+      }
+    }
+  },
+  "sqlitePersistenceAfterReopening": "passed",
+  "sqliteConstraintsAndTestIsolation": "passed",
+  "handoverBuilderSQLiteVerification": "passed",
+  "freshOverlayApplicationAndTestedCodeHashes": "passed",
+  "sqliteMigrations": "passed",
+  "sqliteSeed": "passed",
+  "copilotRuntimeAndSignInPreflight": "passed",
+  "developmentServerAndApiWithPostgresStopped": "passed",
+  "source": "solution-brief",
+  "exerciseTodoBlocks": 3,
+  "englishAndSpanishSessionDocuments": 12,
+  "englishAndSpanishSQLiteGuides": true,
+  "liveModelRequestsMade": 0,
+  "interactiveBrowserRunVerified": false,
+  "independentFacilitatorDryRun": "pending"
+}
